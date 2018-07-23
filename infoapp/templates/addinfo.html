@@ -1,0 +1,31 @@
+{% extends "base.html "%}
+
+{% load staticfiles %}
+
+{% block body_block %}
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+
+
+  <form method="post" novalidate>
+  {% csrf_token %}
+
+  <h3>Data Registration Form</h3>
+  <hr/>
+
+
+  {% include 'form_temp.html' with form=form %}
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+</main>
+</div>
+</div>
+
+{% endblock %}

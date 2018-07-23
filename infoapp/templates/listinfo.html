@@ -1,0 +1,61 @@
+{% extends "base.html "%}
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+
+{% block body_block %}
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+
+				<h1>We have {{count}} Data in Our Databse</h1>
+
+				
+
+	<div class="table-responsive">
+					 <table class="table table-striped">
+						 <thead>
+							 <tr>
+
+								<th>Surname</th>
+								<th>Other Name(s)</th>
+								<th>Email</th>
+								<th>Phone Number </th>
+								<th>State</th>
+								<th>Address</th>
+								 </tr>
+						 </thead>
+				{% for datas in data %}
+
+						 <tbody>
+							 <tr>
+
+								<td>{{ datas.surname}}</td>
+								<td>{{ datas.othername}}</td>
+								<td>{{ datas.email}}</td>
+								<td>{{ datas.phone }}</td>
+								<td>{{ datas.state }}</td>
+								<td>{{ datas.address }}</td>
+							 </tr>
+						</thead>
+
+				{% empty %}
+						<tbody>
+							<td> No Data </td>
+						</thead>
+				{% endfor %}
+
+			</table>
+
+		</div>
+</div>
+
+</main>
+</div>
+</div>
+
+{% endblock %}
